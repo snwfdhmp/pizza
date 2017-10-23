@@ -1,0 +1,6 @@
+<h1>New Pizza</h1>
+
+<%= form_for(pizza, {action: pizzasPath(), method: "POST"}) { %>
+  <%= partial("pizzas/form.html") %>
+  <a href="<%= pizzasPath() %>" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
+<% } %>

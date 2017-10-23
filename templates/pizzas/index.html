@@ -1,0 +1,31 @@
+<h1>Pizzas</h1>
+<p>
+  <a href="<%= newPizzasPath() %>" class="btn btn-primary">Create New Pizza</a>
+</p>
+
+<table class="table table-striped">
+  <thead>
+  <th>Name</th>
+    <th>Prix</th>
+    <th>&nbsp;</th>
+  </thead>
+  <tbody>
+    <%= for (pizza) in pizzas { %>
+      <tr>
+      <td><%= pizza.Name %></td>
+        <td><%= pizza.Prix %></td>
+        <td>
+          <div class="pull-right">
+            <a href="<%= pizzaPath({ pizza_id: pizza.ID }) %>" class="btn btn-info">View</a>
+            <a href="<%= editPizzaPath({ pizza_id: pizza.ID }) %>" class="btn btn-warning">Edit</a>
+            <a href="<%= pizzaPath({ pizza_id: pizza.ID }) %>" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger">Destroy</a>
+          </div>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= paginator(pagination) %>
+</div>

@@ -63,6 +63,7 @@ func App() *buffalo.App {
 		app.GET("/", HomeHandler)
 
 		app.ServeFiles("/assets", packr.NewBox("../public/assets"))
+		app.Resource("/pizzas", PizzasResource{&buffalo.BaseResource{}})
 	}
 
 	return app

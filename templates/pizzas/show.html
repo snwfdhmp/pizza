@@ -1,0 +1,17 @@
+<h1>Pizza#Show</h1>
+
+<ul class="list-unstyled list-inline">
+  <li><a href="<%= pizzasPath() %>" class="btn btn-info">Back to all Pizzas</a></li>
+  <li><a href="<%= editPizzaPath({ pizza_id: pizza.ID })%>" class="btn btn-warning">Edit</a></li>
+  <li><a href="<%= pizzaPath({ pizza_id: pizza.ID })%>" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger">Destroy</a>
+</ul>
+
+<p>
+  <strong>Name</strong>: <%= pizza.Name %>
+</p>
+<p>
+  <strong>Description</strong>: <%= pizza.Description %>
+</p>
+<p>
+  <strong>Prix</strong>: <%= pizza.Prix %>
+</p>
